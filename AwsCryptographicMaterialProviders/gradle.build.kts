@@ -17,6 +17,10 @@
 // The project directory after building everything might look like:
 // (TODO: need replaceable modules too)
 // (TODO: smithyprojections strucure a little unclear, probably needs a library name in there too)
+// (TODO: fill in more source files to make flow clearer)
+// (TODO: missing native language dependencies - need to declare categories of dependencies sources)
+// (TODO: Have Java externs in proper separate Java project)
+// (TODO: How do I dry run publishing everything)
 
 // .
 // ├── build
@@ -60,10 +64,7 @@
 plugins {
     // Existing Smithy Gradle plugin.
     // Will be updated to attach metadata about the input model
-    // and code generation plugins used,
-    // somewhat along the lines of https://quip-amazon.com/saOSAXqqijtX/Smithy-model-traceability
-    // (not yet funded by the Smithy team but hopefully landing in 2025,
-    // so we'll do our own thing but try to be forwards-compatible)
+    // and code generation plugins used.
     id("software.amazon.smithy.gradle.smithy-jar").version("1.1.0")
     
     // Existing Dafny Gradle plugin.
@@ -102,6 +103,7 @@ dafny {
 // Note this is necessary because it doesn't make sense to cram all configuration into smithy-build.json,
 // because `smithy build` fundamentally only wants Smithy models as input,
 // but polymorphing needs actual implementation code/projects as well.
+// TODO: legacy tasks to copy from build back into src, 
 polymorph {
     // TODO: Somewhat redundant with smithy-build.json and the metadata in the Dafny API dependencies.
     // But on the other hand, being explicit is probably better.
