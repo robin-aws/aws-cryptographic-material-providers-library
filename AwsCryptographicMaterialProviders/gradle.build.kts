@@ -134,6 +134,13 @@ polymorph {
       go {}
       net {}
     }
+
+    // Pluggable mechanism for templating things like project files.
+    // Follows the Smithy example: something like smithy-typescript
+    // will create a simple, functional package.json,
+    // whereas aws-sdk-js-v3 codegen will create a much richer one
+    // with AWS branding/licensing/etc.
+    conventions.set("aws.cryptography")
 }
 
 dependencies {
@@ -175,7 +182,10 @@ dependencies {
     //   whenever a polymorphed library is published somewhere,
     //   but better to avoid additional stateful systems.
     //
-    // This mapping can be cached locally by Gradle, and/or locked down with some kind of lock file.
+    // This mapping can be cached locally by Gradle, and/or locked down with some kind of lock file.\
+    //
+    // Dafny itself could use a similar approach, if Dafny projects have an identity
+    // and a convention for mapping those identifiers to target language ecosystems.
 
     implementation("software.amazon.awssdk:Dafny-DynamoDB:1.0-SNAPSHOT")
     implementation("software.amazon.awssdk:Dafny-KMS:1.0-SNAPSHOT")
