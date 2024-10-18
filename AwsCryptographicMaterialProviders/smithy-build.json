@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "projections": {
+    "plugins": {
+      "dafny-library-codegen": {
+        "edition": "2023",
+        "services": [
+          "aws.cryptography.materialProviders#AwsCryptographicMaterialProviders",
+          "aws.cryptography.keystore#KeyStore"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Generated from Dafny Gradle plugin. DO NOT EDIT DIRECTLY.
+[options]
+library = [
+  "/some/internal/gradle/path/smithy-dafny-standard-library.doo"
+]
