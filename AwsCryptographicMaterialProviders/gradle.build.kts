@@ -21,6 +21,10 @@
 // (TODO: missing native language dependencies - need to declare categories of dependencies sources)
 // (TODO: Have Java externs in proper separate Java project)
 // (TODO: How do I dry run publishing everything)
+// (TODO: Look into how SDKs deal with dependabot)
+
+
+
 
 // .
 // ├── build
